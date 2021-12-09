@@ -4,8 +4,8 @@
 time_in_seconds = int(input('Введите время в секундах: '))
 
 hours = time_in_seconds // 3600
-minutes = (time_in_seconds - hours * 3600) // 60
-seconds = (time_in_seconds - hours) % 60
+minutes = time_in_seconds % 3600 // 60
+seconds = time_in_seconds % 60
 
 print('%.2d:%.2d:%.2d' % (hours, minutes, seconds))
 print('{:02}:{:02}:{:02}'.format(hours, minutes, seconds))
