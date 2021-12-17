@@ -6,22 +6,22 @@
 # Если специальный символ введён после нескольких чисел, то вначале нужно добавить сумму
 # этих чисел к полученной ранее сумме и после этого завершить программу.
 
-
 def repack(packed_str):
-    new_num.clear()
+    global _sum, new_sum
+    new_sum = 0
     for n in packed_str.split():
         if n.isdigit():
-            num_list.append(int(n))
-            new_num.append(int(n))
+            _sum += int(n)
+            new_sum += int(n)
         elif n in ['q', 'Q']:
             return 'q'
         else:
             print(f'Введены некорректные данные! "{n}" не является целым числом!')
     return
 
-
-num_list = list()
-new_num = list()
+_sum = 0
+new_sum = 0
 while repack(input('Введие данные: ')) != 'q':
-    print(f'{sum(new_num)}({sum(num_list)})')
-print(f'{sum(new_num)}({sum(num_list)})')
+    print(f'{new_sum}({_sum})')
+print(f'{new_sum}({_sum})')
+
